@@ -1,3 +1,3 @@
 # pythonadvanced
 
-Мои best программы с курса Python advanced
+Мои good программы с курса Python advanced
