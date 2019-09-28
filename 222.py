@@ -8,7 +8,7 @@ class Critter(object):
         self.boredom = boredom
 
     def talk(self):
-        print('Меня зовут,' self.name)
+        print('Меня зовут,', self.name)
 def main():
     crit1 = Critter('')
     crit1.talk()
