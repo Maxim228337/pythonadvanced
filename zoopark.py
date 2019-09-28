@@ -1,3 +1,5 @@
+from random import randint
+b = {}
 class Critter:
     """Виртуальный питомец"""
     total = 0
@@ -6,7 +8,7 @@ class Critter:
     def status():
         print("Общее число зверюшек", Critter.total)
 
-    def __init__(self, name, hunger = 0, boredom = 0):
+    def __init__(self, name, hunger = 0, boredom =0):
         self.__name = name
         self.hunger = hunger
         self.boredom = boredom
@@ -65,13 +67,14 @@ class Critter:
         self.__pass_time()
     
     def __str__(self):
-        a = "Имя зверушки: " + str(self.name) + '\n' + "Голод зверушки: " + 
-            str(self.hunger) + '\n' +  "Скука зверушки: " + str(self.boredom) + '\n'+"Настроение зверушки: " + str(self.mood) + '\n'
+        a = "Имя зверушки: " + str(self.name) + '\n' + "Голод зверушки: " + str(self.hunger) + '\n' +  "Скука зверушки: " + str(self.boredom) + '\n'+"Настроение зверушки: " + str(self.mood) + '\n'
         return a
   
 def main():
-    crit_name = input("Как вы назовете свою зверюшку?: ")
-    crit = Critter(crit_name)
+    
+    for i in range(5):
+        crit_name = input("Как вы назовете свою зверюшку?: ")
+        b.append(Critter(crit_name,randint(0,10),randint(0,10)))
 
     choice = None  
     while choice != "0":
@@ -83,6 +86,7 @@ def main():
         1 - Узнать о самочувствии зверюшки
         2 - Покормить зверюшку
         3 - Поиграть со зверюшкой
+        4 - Конкретная зверушка
         """)
     
         choice = input("Ваш выбор: ")
@@ -94,18 +98,23 @@ def main():
 
         # беседа со зверюшкой
         elif choice == "1":
-            crit.talk()
+            for elem in b:
+                elem.talk()
         
         # кормление зверюшки
         elif choice == "2":
-            crit.eat()
+            for elem in b:
+                elem.eat()
          
         # игра со зверюшкой
         elif choice == "3":
-            crit.play()
+            for elem in b:
+                elem.play()
         
         elif choice == "secret":
-            print(crit)
+            for elem in b:
+                 print(elem)
+
 
         # непонятный пользовательский ввод
         else:
