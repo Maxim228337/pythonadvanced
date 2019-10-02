@@ -51,20 +51,22 @@ class Critter:
         self.__pass_time()
 
     def eat(self,):
-        self.hunger -= int(input())
+        self.hunger -= int(input("Сколько кормить? "))
         print("Мррр...  Спасибо!")
         if self.hunger < 0:
             self.hunger = 0
         self.__pass_time()
 
     def play(self):
-        self.boredom -= int(input())
+        self.boredom -= int(input('Сколько Играть? '))
         print("Уиии!")
         if self.boredom < 0:
             self.boredom = 0
         self.__pass_time()
+    
     def __str__(self):
-        a = "Имя зверушки: " + str(self.name) + '\n' + "Голод зверушки: " + str(self.hunger) + '\n' +  "Скука зверушки: " + str(self.boredom) + '\n'+"Настроение зверушки: " + str(self.mood) + '\n'
+        a = "Имя зверушки: " + str(self.name) + '\n' + "Голод зверушки: " + 
+            str(self.hunger) + '\n' +  "Скука зверушки: " + str(self.boredom) + '\n'+"Настроение зверушки: " + str(self.mood) + '\n'
         return a
   
 def main():
