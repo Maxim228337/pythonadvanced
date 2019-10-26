@@ -55,3 +55,4 @@ class Deck(Hand):
 for i in range(int(input())):
     crit_name = input("Имя игрока? ")
     B[crit_name] = Hand()
+    
